@@ -1,0 +1,29 @@
+{$CLEO .cs}
+
+script_name 'AMB1COM'
+
+0@ = 0
+
+while true
+    wait 0
+
+    if
+        $ONMISSION == 1
+    then
+        if and
+            0@ == 0
+            $6756 == 2
+        then
+            wait 500
+
+            if
+                $ONMISSION == 1
+            then
+                $6756 = 12
+                0@ = 1
+            end
+        end
+    else
+        0@ = 0
+    end
+end
